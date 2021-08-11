@@ -1,0 +1,502 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(1, 28, 63);
+  color: #00ff73;
+}
+
+body::before{
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 60, 225, 0.3);
+  clip-path: circle(60% at 50% 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  font-size: 8vw;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 5vw;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.navbar {
+  height: 80px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(4, 41, 145, 0.3);
+  text-align: center;
+  box-shadow: rgb(2 12 27 / 70%) 0px 10px 30px -10px;
+}
+
+.navbar > div > a {
+  color: #09fc8a;
+  text-decoration: none;
+}
+
+.navbar > div > a:hover {
+  color: #ffffff;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.side-menu {
+  display: none;
+}
+
+.img_holder{
+  animation-name: circle-in-out;
+  animation-duration: 1.5s;
+}
+
+@keyframes circle-in-out{
+  from{
+    clip-path: circle(0% at 50% 50%);
+  }
+  to{
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+
+
+.cntbtn {
+  width: auto;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(1, 28, 63);
+  border: 2px solid #00ff73;
+  color: #00ff73;
+  border-radius: 5px;
+}
+.cntbtn:hover {
+  background-color: #00ff73;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.cntbtn>a{
+  text-decoration: none;
+  color: #00ff73;
+}
+
+.cntbtn:hover>a {
+  background-color: #00ff73;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.highlight {
+  color: white;
+}
+
+#img {
+  height: 100%;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.hover-underline-animation:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background:#00ff73;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+.hover-underline-animation:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(228, 227, 227);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#home,
+#about,
+#education,
+#skills,
+#contact {
+  height: 100vh;
+}
+#education,
+#skills,
+#about,
+#home,
+#contact,#projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects{
+height: auto;
+}
+
+#projects>div>.row{
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
+#skills > .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typewriter h2 {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid rgb(0, 0, 0);
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  font-weight: bold;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em;
+  /* Adjust as needed */
+  animation: typing 2.5s steps(60, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: rgb(255, 255, 255);
+  }
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+}
+
+.col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: auto;
+  width: 300px !important;
+  height: 400px;
+  cursor: pointer;
+  color:#ffffff;
+  /* background-color: rgb(4, 41, 145, 0.3); */
+  background: transparent;
+  backdrop-filter: blur(5px);
+  border: 1px solid #ffffff;
+  box-shadow: 2px 2px 5px rgba(114, 114, 114, 0.5);
+  border-radius: 15px;
+}
+
+.card>div>h4{
+  color: #00ff73;
+}
+
+.card-img-top {
+  width: auto;
+  height: 200px;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+}
+
+.card-title{
+  position: relative;
+  -webkit-text-stroke: 0.3px #00ff73;
+  -webkit-text-fill-color: rgb(1, 28, 63);
+}
+
+.card-title::before{
+  content: attr(data-text);
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  color: #00ff73;
+  -webkit-text-stroke: 1.7px rgb(0, 255, 51);
+  border-right: 2px solid #00ff73;
+  overflow: hidden;
+  animation:animate 6s linear infinite;
+}
+
+@keyframes animate{
+  0%,10%,100%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+#myBtn {
+  display: none;
+}
+
+.fas {
+  font-size: xx-large;
+  margin-right: 20px;
+  color: white;
+}
+.far {
+  font-size: xx-large;
+  margin-right: 20px;
+  color: white;
+}
+
+.fab {
+  font-size: xx-large;
+  margin-right: 20px;
+  color: white;
+}
+
+.fa-envelope {
+  font-size: xx-large !important;
+  margin-right: 20px;
+  color: white;
+}
+
+#mail_mobile {
+  display: none;
+}
+
+#mail_com {
+  display: block;
+}
+
+#links {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media all and (max-width: 520px) {
+  .navbar {
+    display: none;
+  }
+
+  .side-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(3, 12, 48);
+  }
+
+  .overlay {
+    background-color: white;
+    color: rgb(0, 0, 0);
+  }
+
+  .overlay a {
+    outline: none;
+  }
+
+  .overlay-top-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(3, 12, 48);
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+  }
+  .overlay-content{
+    padding-left: 20px;
+  }
+  #home {
+    height: auto;
+    margin-top: 100px;
+  }
+
+  #about,
+  #education,
+  #skills,
+  #projects,
+  #contact {
+    height: auto;
+    margin-top: 200px;
+  }
+
+  .col-md-6 {
+    padding-top: 30px;
+  }
+
+  .edu {
+    padding-top: 30px;
+  }
+  #img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 400%;
+    margin: auto;
+  }
+
+  .card {
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    height: auto;
+    width: 400px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ffffff;
+    box-shadow: 2px 2px 5px rgba(114, 114, 114, 0.5);
+    border-radius: 15px;
+    color: #ffffff;
+  }
+
+  .card-img-top {
+    height: 200px;
+    width: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  #mail_mobile {
+    display: block;
+  }
+
+  #mail_com {
+    display: none;
+  }
+
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(3, 12, 48);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .fas {
+    font-size: xx-large;
+    margin-right: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  .far {
+    font-size: xx-large;
+    margin-right: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  .fab {
+    font-size: xx-large;
+    margin-right: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  .smi {
+    color: rgb(3, 12, 48);
+  }
+
+  .js {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: xx-larger;
+    color: #00ff73;
+  }
+}
+
+@media all and (min-width:750px) {
+  /* #img{
+    height: 100%;
+    width: 100%;
+  } */
+  .card{
+    width: auto;
+    height: 450px;
+  }
+  
+}
+
+@media all and (width:768px) {
+  #img{
+    height: 100%;
+    width: 100%;
+  }
+}
+ 
+@media all and (width:1024px) {
+  #img{
+    height: 100%;
+    width: 100%;
+  }
+}
